@@ -75,6 +75,8 @@ impl TxExecutor {
                 })
                 .unwrap();
 
+            info!("pool_position: {:?}", pool_position);
+
             // Rotate into the worker pool.
             this.clone()
                 .execute_pool_rotate_txs(slot, pool_position.clone())
