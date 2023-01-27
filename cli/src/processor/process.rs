@@ -78,7 +78,7 @@ pub fn process(matches: &ArgMatches) -> Result<(), CliError> {
             id,
             kickoff_instruction,
             trigger,
-        } => super::thread::create(&client, id, kickoff_instruction, trigger),
+        } => super::thread::create(&client, id, vec![kickoff_instruction], trigger),
         CliCommand::ThreadDelete { id } => super::thread::delete(&client, id),
         CliCommand::ThreadPause { id } => super::thread::pause(&client, id),
         CliCommand::ThreadResume { id } => super::thread::resume(&client, id),
@@ -102,6 +102,7 @@ pub fn process(matches: &ArgMatches) -> Result<(), CliError> {
         } => super::webhook::request_new(&client, api, id, method, route),
         CliCommand::WorkerCreate { signatory } => super::worker::create(&client, signatory, false),
         CliCommand::WorkerGet { id } => super::worker::get(&client, id),
+        CliCommand::WorkerUpdate { id, signatory } => super::worker::update(&client, id, signatory),
     }
 }
 
