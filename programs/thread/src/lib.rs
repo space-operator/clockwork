@@ -14,7 +14,7 @@ use clockwork_utils::CrateInfo;
 use instructions::*;
 use state::*;
 
-declare_id!("3XXuUFfweXBwFgFfYaejLvZE4cGZiHgKiGfMtdxNzYmv");
+declare_id!("5e5QWXuRXhfzBZ2nsaqvMrUrWhy6zwxxBinoEGoNKQRo");
 
 /// Program for creating transaction threads on Solana.
 #[program]
